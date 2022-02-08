@@ -22,7 +22,7 @@ public interface IUtilisateur extends JpaRepository <Utilisateur, Long> {
 	
 	
 	@Query(value = "INSERT INTO utilisateur (id,nom,prenom,email, password, telephone,photo,geom)"
-			+ " VALUES (1456,:nom, :prenom, :email,:password,:telephone,:photo,ST_SetSRID(ST_Point(:Longitude,:Latitude),4326))" , nativeQuery = true)
+			+ " VALUES (7,:nom, :prenom, :email,:password,:telephone,:photo,ST_SetSRID(ST_Point(:Longitude,:Latitude),4326))" , nativeQuery = true)
 	List<Utilisateur> AddUser(@Param("nom") String nom,
 			@Param("prenom") String prenom,
 			@Param("email") String email,

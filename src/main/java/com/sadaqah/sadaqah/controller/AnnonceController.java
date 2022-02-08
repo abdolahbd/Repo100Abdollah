@@ -46,7 +46,7 @@ public class AnnonceController {
 	
 	//upload Annonce image
 	@PostMapping("/upload_annonce_image")
-	  public boolean pictureupload(@RequestParam("id") long id
+	  public boolean pictureupload(@RequestParam(defaultValue="15485") long id
 			  ,@RequestParam("file") MultipartFile file) {
 	      return annonceService.pictureupload(id,file);
 	  }
