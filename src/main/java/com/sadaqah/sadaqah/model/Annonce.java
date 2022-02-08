@@ -34,11 +34,11 @@ public class Annonce {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
+	@Column(name="_id")
 	private Long id;
 	
 	
-	@Column(name="geom")
+	@Column(name="_geom")
 	@JsonSerialize(using = GeometrySerializer.class)
 	@JsonDeserialize(using = GeometryDeserializer.class) 
 	private Point geom;
@@ -46,22 +46,22 @@ public class Annonce {
 	@ManyToOne
 	private Utilisateur donnateur;
 	
-	@Column(name="titre")
+	@Column(name="_titre")
 	private String titre;
 	
-	@Column(name="description")
+	@Column(name="_description")
 	private String description;
 	
-	@Column(name="quantite")
+	@Column(name="_quantite")
 	private Long quatite;
 	
-	@Column(name="date")
+	@Column(name="_date")
 	private Date date;
 	
-	@Column(name="photo")
+	@Column(name="_photo")
 	private String photo;
 	
-	@Column(name="status", columnDefinition = "varchar(100) default 'déclarée'")
+	@Column(name="_status", columnDefinition = "varchar(100) default 'déclarée'")
 	private String status;
 	
 	
