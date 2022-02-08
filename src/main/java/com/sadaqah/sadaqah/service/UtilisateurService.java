@@ -66,9 +66,9 @@ public class UtilisateurService {
 	}
 	
 	
-	public Boolean addUser(String nom,String prenom,String email,String password,long telephone,String photo,double Longitude,double Latitude) {
+	public Boolean addUser(long id,String nom,String prenom,String email,String password,long telephone,String photo,double Longitude,double Latitude) {
         try {
-		utilisateurRepo.AddUser(nom,prenom,email, password, telephone,photo,Longitude,Latitude);
+		utilisateurRepo.AddUser(id,nom,prenom,email, password, telephone,photo,Longitude,Latitude);
         return true;
         }
         catch(Exception e){
