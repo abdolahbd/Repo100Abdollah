@@ -38,11 +38,6 @@ public class Annonce {
 	private Long id;
 	
 	
-	@Column(name="_geom")
-	@JsonSerialize(using = GeometrySerializer.class)
-	@JsonDeserialize(using = GeometryDeserializer.class) 
-	private Point geom;
-	
 	@ManyToOne
 	private Utilisateur donnateur;
 	
@@ -61,7 +56,7 @@ public class Annonce {
 	@Column(name="_photo")
 	private String photo;
 	
-	@Column(name="_status", columnDefinition = "varchar(100) default 'déclarée'")
+	@Column(name="_status", columnDefinition = "varchar(100) default 'declaree'")
 	private String status;
 	
 	
@@ -82,13 +77,6 @@ public class Annonce {
 		this.id = id;
 	}
 
-	public Point getGeom() {
-		return geom;
-	}
-
-	public void setGeom(Point geom) {
-		this.geom = geom;
-	}
 
 
 	public String getTitre() {
@@ -164,11 +152,10 @@ public class Annonce {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Annonce(Long id, Point geom, Utilisateur donnateur, String titre, String desc, Long quatite, Date date,
+	public Annonce(Long id,  Utilisateur donnateur, String titre, String desc, Long quatite, Date date,
 			String photo, Category categorie, String status, Commune commune) {
 		super();
 		this.id = id;
-		this.geom = geom;
 		this.donnateur = donnateur;
 		this.titre = titre;
 		this.description = desc;
