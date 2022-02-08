@@ -44,7 +44,8 @@ public class UtilisateurController {
 
 
 	@PostMapping ("/sign_up")
-	public Boolean sign_up(@RequestParam("nom") String nom,
+	public Boolean sign_up(@RequestParam("id") Long id,
+			@RequestParam("nom") String nom,
 			@RequestParam("prenom") String prenom,
 			@RequestParam("email") String email,
 			@RequestParam("password") String password,
@@ -52,7 +53,7 @@ public class UtilisateurController {
 			@RequestParam("photo") String photo,
 			@RequestParam("Longitude") Double Longitude,
 			@RequestParam("Latitude") Double Latitude) {
-        return utilisateurService.addUser(nom,prenom,email, password, telephone,photo,Longitude,Latitude);
+        return utilisateurService.addUser(id,nom,prenom,email, password, telephone,photo,Longitude,Latitude);
 	
 	}
 
